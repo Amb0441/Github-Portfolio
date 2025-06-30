@@ -1,4 +1,5 @@
-const roles = ["Student", "SAP Major", "Developer"];
+// Typiing effect
+const roles = ["Student", "Sap Major", "Developer"];
 let roleIndex = 0;
 let charIndex = 0;
 let typing = true;

@@ -6,18 +6,22 @@
 
 body {
   font-family: Arial, sans-serif;
+  background: #fff; /* Make entire page background white */
 }
 
-/* Profile Picture and Intro Section */
 .profile-section {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
   display: flex;
   align-items: center;
+  justify-content: center;   
   z-index: 10;
-  background: transparent;
+  background: #fff;
+  width: 100%;
+  padding: 110px 0 60px 0; 
+  margin-top: 130px;
 }
 
 .profile-pic-container {
@@ -43,9 +47,9 @@ body {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;   
   height: 450px;
-  align-items: flex-start;  
+  align-items: flex-start;   
 }
 
 .profile-intro h2 {
@@ -61,11 +65,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
-  padding: 30px 45px;
-  position: relative;
-  z-index: 20;
-  right: 90px;
+  background: #fff;
+  padding: 30px 130px 30px 10px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 200;
 }
 
 .logo {
@@ -195,14 +201,14 @@ button:hover::before {
 
 /* Typing Effect */
 .typing-effect {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: #1F2937;
   font-family: 'Montserrat', Arial, sans-serif;
   margin-bottom: 3px;
-  margin-top: -10px;
+  margin-top: px;
   min-height: 2.2em;
   letter-spacing: 1px;
-  margin-left: 85px;
+  margin-left: 150px; 
 }
 
 #typed-text {
@@ -218,20 +224,135 @@ button:hover::before {
   50% { border-color: transparent; }
 }
 
+/* About Section */
+.about-section {
+  width: 100vw;
+  min-height: 60vh;
+  background: #fff; /* Make About section background white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0 32px 0; /* Add enough top padding to push About Me below the landing/profile section */
+  margin-top: 22vh;           /* Remove negative margin */
+  box-sizing: border-box;
+}
+
+.about-container {
+  max-width: 1200px;
+  background: #fff; /* Make About container background white */
+  border-radius: 0;
+  box-shadow: none;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.about-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-header h2 {
+  font-size: 2.4rem;
+  color: #14B8A6;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.about-content-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.about-box-profile {
+  width: 340px;
+  height: 420px;
+  background: #fff; /* Make profile picture box background white */
+  border-radius: 22px;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+}
+
+.about-box-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  transition: transform 0.3s;
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 0; /* Remove any left margin */
+}
+
+.about-text p {
+  font-size: 1.08rem;
+  color: #1F2937;
+  line-height: 1.7;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-bottom: 18px;
+  max-width: 700px;
+}
+
+/* Responsive for About Section */
+@media (max-width: 900px) {
+  .about-container {
+    padding: 24px 8px;
+    gap: 24px;
+  }
+  .about-content-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .about-box-profile {
+    width: 90vw;
+    max-width: 320px;
+    height: 320px;
+    margin-bottom: 18px;
+  }
+  .about-header h2,
+  .about-text p {
+    text-align: center;
+  }
+}
+
 /* --- Responsive Styles --- */
 @media (max-width: 900px) {
+  .navbar {
+    padding: 18px 18px;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    z-index: 200;
+    justify-content: space-between;
+  }
   .profile-section {
     flex-direction: column;
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100vw;
-    height: auto;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 120px;
-    z-index: 10;
+    justify-content: center;
+    padding-top: 90px;
   }
   .profile-pic-container {
     width: 220px;
@@ -244,11 +365,11 @@ button:hover::before {
   .profile-intro {
     margin-left: 0;
     height: auto;
-    align-items: center;
+    align-items: center;     
     text-align: center;
   }
   .typing-effect {
-    margin-left: 0;
+    margin-left: 0; 
   }
   .profile-buttons {
     margin-left: 0;
