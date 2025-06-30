@@ -28,3 +28,12 @@ function typeRole() {
     }
 }
 typeRole();
+
+// Hamburger menu for mobile
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+  hamburger.onclick = () => {
+    navLinks.classList.toggle('open');
+  };
+}
